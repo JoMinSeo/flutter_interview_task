@@ -1,5 +1,5 @@
-class Todo {
-  Todo({
+class Item {
+  Item({
     required this.idx,
     required this.content,
   });

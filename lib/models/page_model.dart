@@ -1,4 +1,4 @@
-import 'package:flutter_interview_task/models/todo_model.dart';
+import 'package:flutter_interview_task/models/item_model.dart';
 
 class PageData {
   PageData({
@@ -7,5 +7,5 @@ class PageData {
   });
 
   String pageName;
-  List<Todo> items;
+  List<Item> items;
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_interview_task/models/todo_model.dart';
+import 'package:flutter_interview_task/models/item_model.dart';
 import 'package:flutter_interview_task/models/page_model.dart';
 
 class HomeProvider extends ChangeNotifier {
@@ -10,9 +10,9 @@ class HomeProvider extends ChangeNotifier {
     PageData(pageName: 'D', items: []),
   ];
 
-  final TextEditingController _todoTextController = TextEditingController();
+  final TextEditingController _itemTextController = TextEditingController();
 
-  TextEditingController get todoTextController => _todoTextController;
+  TextEditingController get itemTextController => _itemTextController;
 
   List<PageData> get pageList => _pageList;
 
@@ -20,7 +20,7 @@ class HomeProvider extends ChangeNotifier {
     _pageList = value;
   }
 
-  void add(PageData pageData, Todo item) {
+  void add(PageData pageData, Item item) {
     pageData.items.add(item);
     notifyListeners();
   }

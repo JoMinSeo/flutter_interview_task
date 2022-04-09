@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_interview_task/models/todo_model.dart';
+import 'package:flutter_interview_task/models/item_model.dart';
 import 'package:flutter_interview_task/models/page_model.dart';
 import 'package:flutter_interview_task/provider/home_provider.dart';
 import 'package:flutter_interview_task/widgets/custom_button.dart';
@@ -96,12 +96,12 @@ class _HomeScreenState extends State<HomeScreen> {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           title: const Text("Add Item"),
-          content: TextField(controller: homeProvider.todoTextController),
+          content: TextField(controller: homeProvider.itemTextController),
           actions: [
             TextButton(
               child: const Text("취소"),
               onPressed: () {
-                homeProvider.todoTextController.text = "";
+                homeProvider.itemTextController.text = "";
                 Navigator.pop(context);
               },
             ),
@@ -110,10 +110,10 @@ class _HomeScreenState extends State<HomeScreen> {
               onPressed: () {
                 homeProvider.add(
                     pageData,
-                    Todo(
+                    Item(
                         idx: pageData.items.length + 1,
-                        content: homeProvider.todoTextController.text));
-                homeProvider.todoTextController.clear();
+                        content: homeProvider.itemTextController.text));
+                homeProvider.itemTextController.clear();
                 Navigator.pop(context);
               },
             ),
@@ -127,7 +127,7 @@ class _HomeScreenState extends State<HomeScreen> {
     BuildContext context,
     HomeProvider homeProvider,
     PageData pageData,
-    Todo currentTodo,
+    Item currentTodo,
   ) {
     showDialog(
       context: context,
@@ -136,12 +136,12 @@ class _HomeScreenState extends State<HomeScreen> {
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           title: const Text("Modify Item"),
-          content: TextField(controller: homeProvider.todoTextController),
+          content: TextField(controller: homeProvider.itemTextController),
           actions: [
             TextButton(
               child: const Text("취소"),
               onPressed: () {
-                homeProvider.todoTextController.text = "";
+                homeProvider.itemTextController.text = "";
                 Navigator.pop(context);
               },
             ),
@@ -149,8 +149,8 @@ class _HomeScreenState extends State<HomeScreen> {
               child: const Text("수정"),
               onPressed: () {
                 homeProvider.modify(pageData, currentTodo.idx,
-                    homeProvider.todoTextController.text);
-                homeProvider.todoTextController.clear();
+                    homeProvider.itemTextController.text);
+                homeProvider.itemTextController.clear();
                 Navigator.pop(context);
               },
             ),
