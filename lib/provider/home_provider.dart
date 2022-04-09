@@ -4,30 +4,10 @@ import 'package:flutter_interview_task/models/page_model.dart';
 
 class HomeProvider extends ChangeNotifier {
   List<PageData> _pageList = [
-    PageData(pageName: 'A', items: [
-      Todo(idx: 1, content: "hello1"),
-      Todo(idx: 2, content: "hello2"),
-      Todo(idx: 3, content: "hello3"),
-      Todo(idx: 4, content: "hello4"),
-    ]),
-    PageData(pageName: 'B', items: [
-      Todo(idx: 1, content: "hello1"),
-      Todo(idx: 2, content: "hello2"),
-      Todo(idx: 3, content: "hello3"),
-      Todo(idx: 4, content: "hello4"),
-    ]),
-    PageData(pageName: 'C', items: [
-      Todo(idx: 1, content: "hello1"),
-      Todo(idx: 2, content: "hello2"),
-      Todo(idx: 3, content: "hello3"),
-      Todo(idx: 4, content: "hello4"),
-    ]),
-    PageData(pageName: 'D', items: [
-      Todo(idx: 1, content: "hello1"),
-      Todo(idx: 2, content: "hello2"),
-      Todo(idx: 3, content: "hello3"),
-      Todo(idx: 4, content: "hello4"),
-    ]),
+    PageData(pageName: 'A', items: []),
+    PageData(pageName: 'B', items: []),
+    PageData(pageName: 'C', items: []),
+    PageData(pageName: 'D', items: []),
   ];
 
   final TextEditingController _todoTextController = TextEditingController();
