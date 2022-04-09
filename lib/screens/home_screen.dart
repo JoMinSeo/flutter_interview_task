@@ -34,17 +34,12 @@ class _HomeScreenState extends State<HomeScreen> {
         .map(
           (e) => Padding(
             padding: const EdgeInsets.only(right: 40),
-            child: Container(
+            child: SizedBox(
               width: 300,
               height: 400,
               child: Column(
                 children: [
-                  Container(
-                    height: 40,
-                    child: Center(
-                      child: Text(e.pageName),
-                    ),
-                  ),
+                  SizedBox(height: 40, child: Center(child: Text(e.pageName))),
                   Expanded(
                     child: SingleChildScrollView(
                       child: Column(
